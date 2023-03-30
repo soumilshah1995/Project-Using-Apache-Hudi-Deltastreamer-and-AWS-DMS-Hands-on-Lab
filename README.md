@@ -394,3 +394,21 @@ main()
 }
 ```
 
+### Step 4: create Task  add following settings 
+```
+{
+    "rules": [
+        {
+            "rule-type": "selection",
+            "rule-id": "861743510",
+            "rule-name": "861743510",
+            "object-locator": {
+                "schema-name": "public",
+                "table-name": "sales"
+            },
+            "rule-action": "include",
+            "filters": []
+        }
+    ]
+}
+```
