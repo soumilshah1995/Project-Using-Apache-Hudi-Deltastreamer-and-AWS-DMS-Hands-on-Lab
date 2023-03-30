@@ -417,3 +417,41 @@ parquetVersion=PARQUET_2_0;
     ]
 }
 ```
+
+
+# Create EMR cluster and fire the delta streamer 
+* Note you can download parquert files https://drive.google.com/drive/folders/1BwNEK649hErbsWcYLZhqCWnaXFX3mIsg?usp=share_link
+* these are sample data files generated from DMS you can directly copy into your S3 for learning purposes 
+
+```
+  spark-submit \
+    --class                 org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer  \
+    --conf                  spark.serializer=org.apache.spark.serializer.KryoSerializer \
+    --conf                  spark.sql.extensions=org.apache.spark.sql.hudi.HoodieSparkSessionExtension  \
+    --conf                  spark.sql.catalog.spark_catalog=org.apache.spark.sql.hudi.catalog.HoodieCatalog \
+    --conf                  spark.sql.hive.convertMetastoreParquet=false \
+    --conf                  spark.hadoop.hive.metastore.client.factory.class=com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory \
+    --master                yarn \
+    --deploy-mode           client \
+    --deploy-mode           cluster \
+    --executor-memory       1g \
+     /usr/lib/hudi/hudi-utilities-bundle.jar \
+    --table-type            COPY_ON_WRITE \
+    --op                    UPSERT \
+    --enable-sync \
+    --source-ordering-field replicadmstimestamp  \
+    --source-class          org.apache.hudi.utilities.sources.ParquetDFSSource \
+    --target-base-path      s3://delta-streamer-demo-hudi/raw/public/sales \
+    --target-table          invoice \
+    --payload-class         org.apache.hudi.common.model.AWSDmsAvroPayload \
+    --hoodie-conf           hoodie.datasource.write.keygenerator.class=org.apache.hudi.keygen.SimpleKeyGenerator \
+    --hoodie-conf           hoodie.datasource.write.recordkey.field=invoiceid \
+    --hoodie-conf           hoodie.datasource.write.partitionpath.field=destinationstate \
+    --hoodie-conf           hoodie.deltastreamer.source.dfs.root=s3://delta-streamer-demo-hudi/raw/public/sales \
+    --hoodie-conf           hoodie.datasource.write.precombine.field=replicadmstimestamp \
+    --hoodie-conf           hoodie.database.name=hudidb_raw  \
+    --hoodie-conf           hoodie.datasource.hive_sync.enable=true \
+    --hoodie-conf           hoodie.datasource.hive_sync.database=hudidb_raw \
+    --hoodie-conf           hoodie.datasource.hive_sync.table=tbl_invoices \
+    --hoodie-conf           hoodie.datasource.hive_sync.partition_fields=destinationstate
+```
