@@ -393,6 +393,11 @@ main()
     "DatePartitionEnabled": false
 }
 ```
+#### Note add this as well in Extra connection attribute
+![image](https://user-images.githubusercontent.com/39345855/228972148-10726c19-678b-4d77-a607-77fd7eebb105.png)
+```
+parquetVersion=PARQUET_2_0;
+```
 
 ### Step 4: create Task  add following settings 
 ```
