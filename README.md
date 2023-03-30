@@ -375,3 +375,22 @@ main()
 
 
 ### Step 3:  Create a DMS Replication Instance as shown in video 3 and create S3 bucket and iAM roles refer video part 3
+
+### Create Source and target in DMS
+* When you create target add following settings 
+```
+
+{
+    "CsvRowDelimiter": "\\n",
+    "CsvDelimiter": ",",
+    "BucketFolder": "raw",
+    "BucketName": "XXXXXXXXXXXXX",
+    "CompressionType": "NONE",
+    "DataFormat": "parquet",
+    "EnableStatistics": true,
+    "IncludeOpForFullLoad": true,
+    "TimestampColumnName": "replicadmstimestamp",
+    "DatePartitionEnabled": false
+}
+```
+
