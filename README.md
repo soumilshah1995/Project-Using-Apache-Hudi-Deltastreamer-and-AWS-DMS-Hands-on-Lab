@@ -8,7 +8,10 @@
 Video Tutorials 
 * Part 1: Project Overview : https://www.youtube.com/watch?v=D9L0NLSqC1s
 * Part 2: Aurora Setup : https://youtu.be/HR5A6iGb4LE
+* Part 3: https://youtu.be/rnyj5gkIPKA
+* Part 4: https://youtu.be/J1xvPIcDIaQ
 
+------------------------------------------------------------------
 # Steps 
 ### Step 1:  Create Aurora Source Database and update the seetings to enable CDC on Postgres 
 *  Read More : https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html
