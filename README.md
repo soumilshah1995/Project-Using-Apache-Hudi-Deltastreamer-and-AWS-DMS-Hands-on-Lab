@@ -6,8 +6,8 @@
 
 ------------------------------------------------------------------
 Video Tutorials 
-Part 1: Project Overview : https://www.youtube.com/watch?v=D9L0NLSqC1s
-Part 2: Aurora Setup : https://youtu.be/HR5A6iGb4LE
+* Part 1: Project Overview : https://www.youtube.com/watch?v=D9L0NLSqC1s
+* Part 2: Aurora Setup : https://youtu.be/HR5A6iGb4LE
 
 # Steps 
 ### Step 1:  Create Aurora Source Database and update the seetings to enable CDC on Postgres 
