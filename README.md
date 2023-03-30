@@ -374,4 +374,4 @@ main()
 ```
 
 
-### Step 3:  Create a DMS Replication Instance as shown in video 3
+### Step 3:  Create a DMS Replication Instance as shown in video 3 and create S3 bucket and iAM roles refer video part 3
