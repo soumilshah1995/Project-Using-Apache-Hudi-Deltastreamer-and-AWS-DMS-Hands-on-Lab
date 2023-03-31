@@ -10,6 +10,7 @@ Video Tutorials
 * Part 2: Aurora Setup : https://youtu.be/HR5A6iGb4LE
 * Part 3: https://youtu.be/rnyj5gkIPKA
 * Part 4: https://youtu.be/J1xvPIcDIaQ
+* part 5 https://youtu.be/On-6L6oJ158
 
 * How to setup EMR cluster with VPC https://www.youtube.com/watch?v=-e1-Zsk17Ss&t=4s
 * PDF guide https://drive.google.com/file/d/1Hj_gyZ8o-wFf4tqTYZXOHNJz2f3ARepn/view
