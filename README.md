@@ -436,7 +436,6 @@ parquetVersion=PARQUET_2_0;
     --conf                  spark.hadoop.hive.metastore.client.factory.class=com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory \
     --master                yarn \
     --deploy-mode           client \
-    --deploy-mode           cluster \
     --executor-memory       1g \
      /usr/lib/hudi/hudi-utilities-bundle.jar \
     --table-type            COPY_ON_WRITE \
@@ -444,7 +443,7 @@ parquetVersion=PARQUET_2_0;
     --enable-sync \
     --source-ordering-field replicadmstimestamp  \
     --source-class          org.apache.hudi.utilities.sources.ParquetDFSSource \
-    --target-base-path      s3://delta-streamer-demo-hudi/raw/public/sales \
+    --target-base-path      s3://delta-streamer-demo-hudi/hudi/public/invoice \
     --target-table          invoice \
     --payload-class         org.apache.hudi.common.model.AWSDmsAvroPayload \
     --hoodie-conf           hoodie.datasource.write.keygenerator.class=org.apache.hudi.keygen.SimpleKeyGenerator \
