@@ -11,6 +11,9 @@ Video Tutorials
 * Part 3: https://youtu.be/rnyj5gkIPKA
 * Part 4: https://youtu.be/J1xvPIcDIaQ
 
+* How to setup EMR cluster with VPC https://www.youtube.com/watch?v=-e1-Zsk17Ss&t=4s
+* PDF guide https://drive.google.com/file/d/1Hj_gyZ8o-wFf4tqTYZXOHNJz2f3ARepn/view
+
 ------------------------------------------------------------------
 # Steps 
 ### Step 1:  Create Aurora Source Database and update the seetings to enable CDC on Postgres 
